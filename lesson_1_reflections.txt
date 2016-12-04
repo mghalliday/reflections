@@ -1,0 +1,56 @@
+COMPARE TWO FILES FROM THE COMMAND LINE
+
+(from the command line)
+diff -u oldfile newfile (lists differences between oldfile and newfile)
+touch filname (create a new file called filename)
+pwr (print wording directory)
+mkdor directoryname (make a new directory called directoryname)
+cd directoryname (change to dorectoryname directory)
+ls (list files in current directory)
+
+COMPARE TWO FILES IN DROPBOX
+
+right click on a document in dropbox and choose view previous versions. Old versions can then be viewed in the browser but by default they are only stored for thirty days
+
+VERSIONS STORED IN GOOGLE DOCS
+
+Google docs has a link at the top that says all changes saved in drive. If you click on that you get a side panel showing all your previous versions and you can restore to any previous version.
+
+VERSIONS STORED IN WIKIPEDIA
+
+Wikipedia has a view history tab to see the old versions of the articles. You can look at any of the old versions or compare two versions.
+
+USE OF GIT FOR VERSION CONTROL
+
+$ git diff oneversion anotherversion #GIT has diff similar to command line to compare versions. using shorter lines helps to identify diferences.
+
+**use commit to record new version. Try to commit for each logical change e.g. bug fix or new feature.
+
+**commit saves all files in your repository.
+
+$ git log --stat #see stats on commits
+
+$ git clone url                     # copies repository at url
+$ cd dirWhereRepositoryIsStored
+$ git log                           # shows history of all commits
+                                    # starting with most recent
+ q                                  # exit git log
+$ git diff 1stCommitId 2ndCommitID  # show differences between two commits
+
+(on mac cmd shift h gets you to home directory)
+(cd ~ if you are using command line)
+(to run game right click on index.html then open with firefox)
+
+$ git checkout commitId             # restore all files to state
+                                    # defined by commitId
+
+**Being able to restore all files to a previous state and back again gives you more confidence to make changes to program.
+
+(to save file opened in browser right click and click save page as)
+
+**git can be used to store the repository where program development files are stored, using the commit command. old versions can be compared using git diff. git checkout can be used to revert to an old verion of the repository.
+
+
+
+
+
