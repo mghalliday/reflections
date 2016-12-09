@@ -1,0 +1,123 @@
+ls -a                      # shows hidden files in current directory
+(hidden files have names which start with a full stop)
+
+INIT
+
+git init                   # makes the current directory a repository
+
+Initialized empty Git repository in /Users/georgehalliday/version-control/reflections/.git/
+
+(although there are files in the directory they are not automatically part of the repository)
+
+(HEAD is git's name for the current commit)
+
+STATUS
+
+git status                 # shows which files have changed since last commit
+
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	lesson_1_reflections.txt
+	lesson_2_reflections.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(output shows that we are on branch master, there are no commits yet and the files already existing in the directory are untracked files)
+
+ADD
+
+git add filename           # adds file to the staging area ready to be stored in the repository by a commit
+
+COMMIT
+
+git commit                 # stores files in staging area in repository as commit. Opens configured editor first so that you can add comment. Comment should be written like a command. Save file and quit then use git log to view new commit. Committed files will be removed from the staging area and only untracked files will be shown by git status command.
+
+DIFF (again)
+
+$ git diff                 # with no arguments compares working directory and staging area
+
+$ git diff --staged        # compares staging area with latest commit
+
+RESET
+
+$ git reset --hard         # reverses uncommitted changes in working directory and staging area **careful when using - not reversible**
+
+CHECKOUT (again)
+
+$ git checkout master      # restores detached HEAD after checkout of old commit
+
+compare working directory with staging area (git diff) and staging area with latest commit (git diff --staged) prior to making a commit to check that there is only one logical change per commit
+
+BRANCH
+
+$ git branch               # shows current branches
+$ git branch branch-name   # creates a new branch called branch-name
+$ git checkout branch-name # check out new branch to work on it
+
+use a branch to develop an experimental version of an alternative or experimental version of a program as opposed to bug fixing. The reliability of the master branch is maintained while new features can be added in a new branch. Can also use when several people are working on the same project. Each works on a separate branch and they are merged later.
+
+LOG (again)
+
+$ git log --graph --oneline master coins # shows branches master and coins (oneline makes clearer)
+
+Each commit only knows its parent. Affects reachability from current position.
+
+CHECKOUT (again)
+
+$ git checkout commitId           # now you are in detached HEAD state 
+$ git checkout -b new_branch_name # now new branch starting from commitId
+
+diagrams show the progress in program development in a way would would be very hard to do withiut them.
+
+MERGE
+
+$ git branch                      # confirm you are on master branch
+    branch1
+    branch2
+   *master
+$ git merge master branch1        # merge branch1 into master branch
+
+(opens editor with suggested merge comment)
+
+(commit history now shows commits from two branches sorted by timestamp. If you git diff between commits from different branches you will see lots of differences even if they are adjacent in the list but can use)
+
+$ git show                     # diff between current commit and its parent
+
+$ git branch -d branch1        # deletes label of merged branch
+
+$ git merge --abort            # abort merge if there is something wrong
+
+(merging the two branches shows that an experimental modification has become part of the main program)
+
+(if you get a conflict open in sublime to resolve)
+
+<<<<<< HEAD
+ code from master branch
+||||||| shared common ancestor
+ code from latest commit shared by master and branch1
+=======
+ code from branch1
+>>>>>>> branch1
+
+(search for less than signs, compare three sections of code, modify to desired code and delete anything unwanted)
+
+$ git status
+$ git add merged_file
+$ git status
+$ git commit                  # to complete change
+
+(automatic merging works where lines of code are present in both commits to be merged, also when lines have been added to, or deleted from the code compared to a common ancestor but where the same lines have been altered in different ways compared to the common ancestor, then it is necessary to resolve the conflict manually)
+
+
+
+
+
+
+
+
+

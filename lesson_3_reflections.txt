@@ -23,3 +23,23 @@ $ git push origin master        # push to remote origin from master branch
 4. To store code where it is not vulnerable to accidental deletion
 5. To store code where it is not vulnerable to breakdown of the machine where it is stored
 6. To store code where it is not vulnerable to obsolescence of the machine where it is stored
+
+$ git pull origin master        # pull from remote origin to master branch
+
+(pushes and pulls are manual operations rather than automatically keeping local and remote in synch, as happens on dropbox. This allows you to experiment with your code locally before you make it available to others on the hub. It also allows you to take other peoples code from github and modify it for your own purposes without synching with the web)
+
+FORKING
+
+(clone repository but both copies are on GitHub computers)
+
+(visit page on repository you wish to fork and press fork button. Visit your own GitHub profile and see that there is a copy. Click on copy and clisk on 'clone or download' to get url. copy url into the git clone command on your command line)
+
+$ git clone url                 # clones forked repository to local
+
+(to allow collaborator visit forked repository again on GitHub, press 'setting' 'collaborators' and add username of your collaborator. Finally click 'add collaborator')
+
+(branch when you want to experiment with code to add new feature or make significant revision
+
+clone when you want to make two copy of remote repository or local copy
+
+fork is like a clone where both copies are on remote)
