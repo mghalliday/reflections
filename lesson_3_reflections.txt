@@ -1,0 +1,25 @@
+CREATING REPOSIORY ON GITHUB
+
+(log in, click on + at top right, then on new repository, give it a name and leave as public, if you didn't already have content you would also check 'Initialize this repository with a README'. Then back to command line...)
+
+$ git remote                    # show current remotes
+$ git remote add origin url     # add repository origin as a remote
+
+(url can be copied from git hub web page)
+
+$ git remote -v                 # show details of current remotes (-v)
+origin url1 (fetch)             # url to fetch from github
+origin url1 (push)              # url to push to github (may be same)
+
+$ git push origin master        # push to remote origin from master branch 
+
+(refresh page on github to see that repository has been copied)
+
+(use remote repository for the following reasons:
+
+1. To collaborate with a team of developers
+2. To make code freely available for others to share
+3. To store code in a platform independent way
+4. To store code where it is not vulnerable to accidental deletion
+5. To store code where it is not vulnerable to breakdown of the machine where it is stored
+6. To store code where it is not vulnerable to obsolescence of the machine where it is stored
